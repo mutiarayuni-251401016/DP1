@@ -4,32 +4,29 @@ uses crt;
 var
    nama: string;
    nilai_keaktifan, nilai_tugas, nilai_ujian: real;
-   murni_keaktifan, murni_tugas, murni_ujian, nilai_akhir: 
+   murni_keaktifan, murni_tugas, murni_ujian, nilai_akhir: real;
 
-begin 
+begin
    clrscr;
-   write('Masukkan nama : ');
+   writeln('Program Hitung Nilai Akhir Mahasiswa');
+   writeln('------------------------------------');
+
+   write('Masukkan Nama Mahasiswa : ');
    readln(nama);
-   write('Masukkan nilai aktif : ');
-   readln(aktif);
-   write('Masukkan nilai tugas : ');
-   readln(tugas);
-   write('Masukkan nilai ujian : ');
-   readln(Ujian);
+   write('Masukkan Nilai Keaktifan : ');
+   readln(nilai_keaktifan);
+   write('Masukkan Nilai Tugas : ');
+   readln(nilai_tugas);
+   write('Masukkan Nilai Ujian : ');
+   readln(nilai_ujian);
 
-   aktif = aktif * 0.2;
+   murni_keaktifan := nilai_keaktifan * 0.20;    {20%}
+   murni_tugas := nilai_tugas * 0.35;    {35%}
+   murni_ujian := nilai_ujian * 0.45;    {45%}
 
-   writeln('Nilai keaktifan : ' aktif:0:2);
+   nilai_akhir := murni_keaktifan + murni_tugas + murni_ujian;
 
-   tugas = tugas * 0.35;
-   
-   writeln('Nilai Tugas :' tugas:0:2);
-
-   ujian = ujian * 0.45;
-
-   writeln('Nilai ujian :' ujian:0:2);
-
-   Akhir := keaktifan + tugas + ujian;
+   writeln('-----------------------------------');
+   writeln('Nilai Akhir      =', nilai_akhir:0:2);
 
 end.
-
